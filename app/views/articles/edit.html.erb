@@ -1,0 +1,6 @@
+<h1>Update Post </h1>
+<%= render 'form' %>
+<%= link_to 'Back', articles_path %>
+
+
+<!-- this is to much magic, not only it knows ( by path, articles/id/edit) not knows that htis form have to be updatet, it also takes tke id of an article and fill out the form for me. it knows tkat the action is articles/updatebecouse it matches it with the path articles/id/edit -->

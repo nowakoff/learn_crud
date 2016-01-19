@@ -1,0 +1,20 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.text %></p>
+<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure'} %>
+<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure'} %>
+
+<% @comments.each do |comment| %>
+  <h6><%= comment.commenter %></h6>
+  <p><%= comment.body %></p>
+<% end %>
+
+<h1>Leave a comment</h1>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+<!-- where is this symbil taken form ? -->
+  <%= f.text_field :commenter %>
+  <%= f.text_area :body, size: "60x12" %>
+  <%= f.submit %>
+<% end %>
+
